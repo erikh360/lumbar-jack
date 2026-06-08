@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Privacy Policy — Lumbar Jack</title>
+<style>
+  :root {
+    --bg:        oklch(0.165 0.006 70);
+    --bg-soft:   oklch(0.205 0.007 70);
+    --border-soft: oklch(0.26 0.007 70);
+    --text:      oklch(0.96 0.004 80);
+    --text-mut:  oklch(0.74 0.007 75);
+    --text-faint:oklch(0.56 0.007 75);
+    --accent:    oklch(0.80 0.125 70);
+    --accent-dim:oklch(0.80 0.125 70 / 0.14);
+
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --maxw: 720px;
+  }
+
+  * { box-sizing: border-box; }
+
+  html { -webkit-text-size-adjust: 100%; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font);
+    font-size: 18px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection { background: var(--accent-dim); }
+
+  a { color: inherit; }
+
+  .wrap {
+    max-width: var(--maxw);
+    margin: 0 auto;
+    padding: 0 28px;
+  }
+
+  /* ---------- Back link ---------- */
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 40px 0 0;
+    color: var(--text-mut);
+    font-size: 15px;
+    text-decoration: none;
+    transition: color 0.12s ease;
+  }
+  .back:hover { color: var(--text); }
+  .back svg {
+    width: 16px;
+    height: 16px;
+    stroke: currentColor;
+    fill: none;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  /* ---------- Header ---------- */
+  .page-header {
+    padding: 32px 0 48px;
+    border-bottom: 1px solid var(--border-soft);
+    margin-bottom: 48px;
+  }
+
+  .pill {
+    display: inline-block;
+    margin-bottom: 18px;
+    padding: 6px 14px;
+    border-radius: 999px;
+    background: var(--accent-dim);
+    color: var(--accent);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .page-header h1 {
+    font-size: clamp(28px, 4vw, 40px);
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    margin: 0 0 10px;
+    line-height: 1.1;
+    color: var(--text);
+    max-width: none;
+  }
+
+  .page-header .updated {
+    margin: 0;
+    font-size: 15px;
+    color: var(--text-faint);
+  }
+
+  /* ---------- Content ---------- */
+  .content {
+    padding-bottom: 80px;
+  }
+
+  .content h2 {
+    font-size: 20px;
+    font-weight: 650;
+    letter-spacing: -0.012em;
+    margin: 44px 0 10px;
+    color: var(--text);
+  }
+
+  .content h2:first-child { margin-top: 0; }
+
+  .content p {
+    margin: 0 0 16px;
+    color: var(--text-mut);
+    font-size: 17px;
+    line-height: 1.65;
+    text-wrap: pretty;
+  }
+
+  .content a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+  .content a:hover { text-decoration: underline; }
+
+  /* ---------- Footer ---------- */
+  footer {
+    border-top: 1px solid var(--border-soft);
+    padding: 38px 0 56px;
+  }
+  .foot-inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px 28px;
+  }
+  .foot-left { color: var(--text-faint); font-size: 14.5px; }
+  .foot-links {
+    display: flex;
+    gap: 24px;
+    font-size: 14.5px;
+  }
+  .foot-links a {
+    color: var(--text-mut);
+    text-decoration: none;
+    transition: color 0.12s ease;
+  }
+  .foot-links a:hover { color: var(--text); }
+  .made {
+    width: 100%;
+    margin-top: 8px;
+    color: var(--text-faint);
+    font-size: 13.5px;
+  }
+
+  @media (max-width: 520px) {
+    body { font-size: 17px; }
+    .wrap { padding: 0 22px; }
+    .foot-inner { flex-direction: column; align-items: flex-start; }
+  }
+</style>
+</head>
+<body>
+
+  <main class="wrap">
+    <a class="back" href="index.html">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H6"/><path d="M11 6l-6 6 6 6"/></svg>
+      Back
+    </a>
+
+    <header class="page-header">
+      <span class="pill">Privacy</span>
+      <h1>Privacy Policy</h1>
+      <p class="updated">Last updated: June 2026</p>
+    </header>
+
+    <div class="content">
+      <p>Lumbar Jack is a macOS menu bar application developed as an independent project.</p>
+
+      <h2>Data Collection</h2>
+      <p>Lumbar Jack collects no data of any kind. The app does not collect, store, transmit, or share any personal information, usage data, analytics, or telemetry.</p>
+
+      <h2>Network Access</h2>
+      <p>Lumbar Jack makes no network requests. It has no internet connectivity and cannot communicate with external servers.</p>
+
+      <h2>Local Storage</h2>
+      <p>All settings (reminder mode, durations, exercise preferences) are stored locally on your Mac using macOS UserDefaults. This data never leaves your device.</p>
+
+      <h2>Third Parties</h2>
+      <p>Lumbar Jack contains no third-party SDKs, analytics tools, advertising frameworks, or tracking libraries of any kind.</p>
+
+      <h2>Children's Privacy</h2>
+      <p>Lumbar Jack does not collect data from anyone, including children.</p>
+
+      <h2>Changes</h2>
+      <p>If this policy changes in a future version, the updated policy will be posted at this URL prior to the update shipping.</p>
+
+      <h2>Contact</h2>
+      <p><a href="https://github.com/erikh360/lumbar-jack/issues">github.com/erikh360/lumbar-jack/issues</a></p>
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrap foot-inner">
+      <div class="foot-left">Lumbar Jack © 2026</div>
+      <nav class="foot-links" aria-label="Footer">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="https://github.com/erikh360/lumbar-jack/issues">Support</a>
+        <a href="#TODO">App Store</a>
+      </nav>
+      <div class="made">Made in Hermanus 🇿🇦</div>
+    </div>
+  </footer>
+
+</body>
+</html>

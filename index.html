@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Lumbar Jack — Your posture isn't going to fix itself.</title>
+<template id="__bundler_thumbnail" data-bg-color="#2a241d">
+  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+    <rect width="1200" height="800" fill="#2a241d" />
+    <g transform="translate(600 400)" fill="none" stroke="#e0a850" stroke-width="22" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M-70 70 L40 -40" />
+      <path d="M20 -90 q70 -30 100 40 q-70 30 -100 -40 Z" fill="#e0a850" stroke="none" />
+    </g>
+  </svg>
+</template>
+<style>
+  :root {
+    --bg:        oklch(0.165 0.006 70);
+    --bg-soft:   oklch(0.205 0.007 70);
+    --bg-card:   oklch(0.225 0.008 70);
+    --border:    oklch(0.30 0.008 70);
+    --border-soft: oklch(0.26 0.007 70);
+    --text:      oklch(0.96 0.004 80);
+    --text-mut:  oklch(0.74 0.007 75);
+    --text-faint:oklch(0.56 0.007 75);
+    --accent:    oklch(0.80 0.125 70);
+    --accent-dim:oklch(0.80 0.125 70 / 0.14);
+
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --maxw: 1080px;
+  }
+
+  * { box-sizing: border-box; }
+
+  html { -webkit-text-size-adjust: 100%; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font);
+    font-size: 18px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection { background: var(--accent-dim); }
+
+  a { color: inherit; }
+
+  .wrap {
+    max-width: var(--maxw);
+    margin: 0 auto;
+    padding: 0 28px;
+  }
+
+  /* ---------- Hero ---------- */
+  .hero {
+    text-align: center;
+    padding: clamp(72px, 12vw, 132px) 0 clamp(56px, 8vw, 88px);
+  }
+
+  .app-icon {
+    width: 132px;
+    height: 132px;
+    margin: 0 auto 38px;
+    border-radius: 30px;
+    display: block;
+    box-shadow: 0 20px 50px -24px rgba(0,0,0,0.7);
+  }
+
+  .wordmark {
+    font-size: clamp(34px, 6vw, 60px);
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    font-weight: 700;
+    margin: 0 0 18px;
+  }
+
+  h1 {
+    font-size: clamp(21px, 3vw, 30px);
+    line-height: 1.25;
+    letter-spacing: -0.01em;
+    font-weight: 500;
+    color: var(--text-mut);
+    margin: 0 auto 26px;
+    max-width: 30ch;
+    text-wrap: balance;
+  }
+
+  .subhead {
+    font-size: clamp(18px, 2.4vw, 22px);
+    color: var(--text-mut);
+    max-width: 46ch;
+    margin: 0 auto 40px;
+    text-wrap: pretty;
+  }
+
+  /* ---------- App Store badge ---------- */
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 13px;
+    padding: 13px 22px 13px 18px;
+    background: #000;
+    border: 1px solid oklch(0.45 0 0);
+    border-radius: 13px;
+    text-decoration: none;
+    color: #fff;
+    transition: transform 0.12s ease, border-color 0.12s ease;
+  }
+  .badge:hover { transform: translateY(-1px); border-color: oklch(0.6 0 0); }
+  .badge svg { width: 27px; height: 27px; display: block; }
+  .badge .badge-text { text-align: left; line-height: 1.05; }
+  .badge .badge-text small {
+    display: block;
+    font-size: 11px;
+    letter-spacing: 0.01em;
+    opacity: 0.92;
+  }
+  .badge .badge-text strong {
+    display: block;
+    font-size: 21px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    margin-top: 1px;
+  }
+
+  .reassure {
+    margin: 22px 0 0;
+    font-size: 14px;
+    color: var(--text-faint);
+    letter-spacing: 0.01em;
+  }
+
+  /* ---------- Features ---------- */
+  .features {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+    padding: clamp(40px, 6vw, 64px) 0 clamp(22px, 3vw, 34px);
+  }
+  .feature {
+    padding: 4px 6px;
+  }
+  .ficon {
+    width: 46px;
+    height: 46px;
+    border-radius: 12px;
+    background: var(--accent-dim);
+    color: var(--accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  .ficon svg { width: 24px; height: 24px; stroke: currentColor; fill: none; stroke-width: 1.9; stroke-linecap: round; stroke-linejoin: round; }
+  .feature h3 {
+    font-size: 20px;
+    font-weight: 650;
+    letter-spacing: -0.012em;
+    margin: 0 0 9px;
+  }
+  .feature p {
+    margin: 0;
+    color: var(--text-mut);
+    font-size: 16.5px;
+    line-height: 1.55;
+    text-wrap: pretty;
+  }
+
+  /* ---------- Screenshots ---------- */
+  .shots {
+    padding: clamp(6px, 1.2vw, 14px) 0 clamp(40px, 6vw, 64px);
+  }
+  .shot-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    align-items: start;
+  }
+  .shot figure { margin: 0; }
+  .shot img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 16px;
+    border: 1px solid var(--border-soft);
+    box-shadow: 0 28px 60px -30px rgba(0,0,0,0.85);
+  }
+  .shot figcaption {
+    margin-top: 18px;
+    font-size: 14.5px;
+    color: var(--text-faint);
+    text-align: center;
+    text-wrap: pretty;
+  }
+
+  .shot-notify {
+    margin: clamp(40px, 6vw, 60px) auto 0;
+    max-width: 620px;
+    text-align: center;
+  }
+  .shot-notify img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 16px;
+    border: 1px solid var(--border-soft);
+    box-shadow: 0 28px 60px -30px rgba(0,0,0,0.85);
+  }
+  .shot-notify figcaption {
+    margin: 18px auto 0;
+    max-width: 46ch;
+    font-size: 14.5px;
+    color: var(--text-faint);
+    text-wrap: pretty;
+  }
+
+  /* ---------- Privacy ---------- */
+  .privacy {
+    margin: clamp(40px, 6vw, 72px) 0;
+    padding: clamp(44px, 6vw, 64px) 40px;
+    background: var(--bg-soft);
+    border: 1px solid var(--border-soft);
+    border-radius: 22px;
+    text-align: center;
+  }
+  .privacy h2 {
+    font-size: clamp(26px, 3.6vw, 38px);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin: 0 auto 16px;
+    max-width: 18ch;
+    text-wrap: balance;
+  }
+  .privacy p {
+    margin: 0 auto;
+    max-width: 52ch;
+    color: var(--text-mut);
+    font-size: 18px;
+    text-wrap: pretty;
+  }
+  .privacy .pill {
+    display: inline-block;
+    margin-bottom: 22px;
+    padding: 6px 14px;
+    border-radius: 999px;
+    background: var(--accent-dim);
+    color: var(--accent);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+  .privacy-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    margin-top: 26px;
+    color: var(--accent);
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: gap 0.14s ease;
+  }
+  .privacy-link svg {
+    width: 17px;
+    height: 17px;
+    stroke: currentColor;
+    fill: none;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+  .privacy-link:hover { gap: 11px; }
+
+  /* ---------- Footer ---------- */
+  footer {
+    border-top: 1px solid var(--border-soft);
+    padding: 38px 0 56px;
+  }
+  .foot-inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px 28px;
+  }
+  .foot-left { color: var(--text-faint); font-size: 14.5px; }
+  .foot-links {
+    display: flex;
+    gap: 24px;
+    font-size: 14.5px;
+  }
+  .foot-links a {
+    color: var(--text-mut);
+    text-decoration: none;
+    transition: color 0.12s ease;
+  }
+  .foot-links a:hover { color: var(--text); }
+  .made {
+    width: 100%;
+    margin-top: 8px;
+    color: var(--text-faint);
+    font-size: 13.5px;
+  }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 860px) {
+    .features { grid-template-columns: 1fr; gap: 36px; max-width: 30rem; margin: 0 auto; }
+    .feature { display: flex; gap: 18px; align-items: flex-start; }
+    .ficon { margin-bottom: 0; flex: 0 0 auto; }
+    .shot-grid { grid-template-columns: 1fr; gap: 44px; max-width: 30rem; margin: 0 auto; }
+  }
+  @media (max-width: 520px) {
+    body { font-size: 17px; }
+    .wrap { padding: 0 22px; }
+    .foot-inner { flex-direction: column; align-items: flex-start; }
+  }
+</style>
+</head>
+<body>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero wrap" data-screen-label="Hero">
+      <img class="app-icon" src="assets/app-icon.png" alt="Lumbar Jack app icon — a lumberjack's axe." width="132" height="132" />
+      <p class="wordmark">Lumbar Jack</p>
+      <h1>Your posture isn't going to fix itself.</h1>
+      <p class="subhead">Lumbar Jack lives in your menu bar and quietly reminds you to move, stand, and stretch throughout the workday.</p>
+
+      <a class="badge" href="#TODO" aria-label="Download on the Mac App Store">
+        <svg viewBox="0 0 24 24" aria-hidden="true" fill="#fff">
+          <path d="M16.365 1.43c.07 1.04-.31 2.04-.94 2.79-.66.78-1.74 1.39-2.79 1.31-.09-1.01.36-2.06.95-2.74.66-.77 1.83-1.34 2.78-1.36zM19.9 17.2c-.52 1.2-.77 1.74-1.44 2.8-.94 1.48-2.26 3.32-3.9 3.34-1.46.01-1.83-.95-3.81-.94-1.98.01-2.39.96-3.85.94-1.64-.02-2.9-1.68-3.84-3.16-2.62-4.13-2.9-8.98-1.28-11.56 1.15-1.83 2.97-2.9 4.68-2.9 1.74 0 2.84.95 4.28.95 1.4 0 2.25-.95 4.27-.95 1.52 0 3.13.83 4.28 2.26-3.76 2.06-3.15 7.42.61 9.18z"/>
+        </svg>
+        <span class="badge-text">
+          <small>Download on the</small>
+          <strong>Mac App Store</strong>
+        </span>
+      </a>
+
+      <p class="reassure">Pay once. No ads. No tracking. No nonsense.</p>
+    </section>
+
+    <!-- FEATURES -->
+    <section class="features wrap" aria-label="Features">
+      <div class="feature">
+        <div class="ficon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><rect x="2.5" y="7.5" width="19" height="9" rx="4.5"/><circle cx="16.5" cy="12" r="2.4" fill="currentColor" stroke="none"/></svg>
+        </div>
+        <div>
+          <h3>Two modes, one app</h3>
+          <p>Sit/Stand mode for standing desks, Move mode for everyone else. Switch anytime.</p>
+        </div>
+      </div>
+
+      <div class="feature">
+        <div class="ficon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M6 9a6 6 0 0 1 12 0c0 5 2 6 2 6H4s2-1 2-6z"/><path d="M10.2 20.5a2 2 0 0 0 3.6 0"/></svg>
+        </div>
+        <div>
+          <h3>Smart reminders</h3>
+          <p>Notifications with snooze and confirm actions. No app-opening required.</p>
+        </div>
+      </div>
+
+      <div class="feature">
+        <div class="ficon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M4 6.5h10"/><path d="M4 12h10"/><path d="M4 17.5h7"/><path d="M17 5.5l2 2 3.5-4" transform="translate(-2.5 1)"/></svg>
+        </div>
+        <div>
+          <h3>Daily exercises</h3>
+          <p>Curated posture exercises grouped by body area, with set tracking and a morning nudge.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SCREENSHOTS -->
+    <section class="shots wrap" aria-label="Screenshots">
+      <div class="shot-grid">
+        <div class="shot">
+          <figure>
+            <img src="assets/shot-sitstand.png" alt="Lumbar Jack in Sit/Stand mode showing a Sitting countdown timer and a checklist of posture exercises." />
+            <figcaption>Sit/Stand mode in action</figcaption>
+          </figure>
+        </div>
+        <div class="shot">
+          <figure>
+            <img src="assets/shot-move.png" alt="Lumbar Jack in Move mode showing a Next move countdown and the same exercise checklist." />
+            <figcaption>Move mode for non-standing desks</figcaption>
+          </figure>
+        </div>
+        <div class="shot">
+          <figure>
+            <img src="assets/shot-settings.png?v=2" alt="Lumbar Jack settings panel showing the Sit/Stand and Move mode toggle, interval slider, and posture fix options." />
+            <figcaption>Settings — configure your mode and intervals</figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <figure class="shot-notify">
+        <img src="assets/shot-notification.png" alt="A macOS notification from Lumbar Jack reading 'Time to stand — you have 4 exercises left today', with an Options menu offering I'm standing, 10 more min, Till :30, and Till :00." />
+        <figcaption>Reminders arrive as native notifications — snooze, confirm, or stand right from the banner</figcaption>
+      </figure>
+    </section>
+
+    <!-- PRIVACY -->
+    <section class="wrap" data-screen-label="Privacy">
+      <div class="privacy">
+        <span class="pill">Privacy</span>
+        <h2>Zero data collection. Zero network access.</h2>
+        <p>Lumbar Jack is fully sandboxed and runs entirely on your Mac. Your data never leaves your device because there's nothing to send.</p>
+        <a class="privacy-link" href="privacy.html">Read the full privacy policy<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13"/><path d="M13 6l6 6-6 6"/></svg></a>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="wrap foot-inner">
+      <div class="foot-left">Lumbar Jack © 2026</div>
+      <nav class="foot-links" aria-label="Footer">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="https://github.com/erikh360/lumbar-jack/issues">Support</a>
+        <a href="#TODO">App Store</a>
+      </nav>
+      <div class="made">Made in Hermanus 🇿🇦</div>
+    </div>
+  </footer>
+
+</body>
+</html>
