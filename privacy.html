@@ -5,18 +5,26 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <link rel="canonical" href="https://erikh360.github.io/lumbar-jack/privacy.html" />
 <title>Privacy Policy — Lumbar Jack</title>
-<link rel="icon" type="image/png" href="assets/app-icon.png" />
-<link rel="apple-touch-icon" href="assets/app-icon.png" />
+<link rel="icon" type="image/png" href="assets/app-icon.png?v=4" />
+<link rel="apple-touch-icon" href="assets/app-icon.png?v=4" />
+<meta name="theme-color" content="#e9e6e1" />
 <style>
   :root {
-    --bg:        oklch(0.165 0.006 70);
-    --bg-soft:   oklch(0.205 0.007 70);
-    --border-soft: oklch(0.26 0.007 70);
-    --text:      oklch(0.96 0.004 80);
-    --text-mut:  oklch(0.74 0.007 75);
-    --text-faint:oklch(0.56 0.007 75);
-    --accent:    oklch(0.80 0.125 70);
-    --accent-dim:oklch(0.80 0.125 70 / 0.14);
+    /* Sunset gradient stops — kept so derived shades stay on-palette */
+    --sun-1: #f0a93f;
+    --sun-2: #d9622a;
+    --sun-3: #7e2a18;
+    --sun-4: #3b1a12;
+
+    /* Neutrals — light sections, cards, docs */
+    --paper: #e9e6e1;
+    --card:  #ffffff;
+    --ink:   #191410;
+    --body:  #544d45;
+    --muted: #8a8177;
+    --rule:  rgba(25,20,16,.1);
+    --link:  #bd7526;
+    --link-hover: #191410;
 
     --font: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     --maxw: 720px;
@@ -24,12 +32,12 @@
 
   * { box-sizing: border-box; }
 
-  html { -webkit-text-size-adjust: 100%; }
+  html { -webkit-text-size-adjust: 100%; color-scheme: light; }
 
   body {
     margin: 0;
-    background: var(--bg);
-    color: var(--text);
+    background: var(--paper);
+    color: var(--body);
     font-family: var(--font);
     font-size: 18px;
     line-height: 1.6;
@@ -37,7 +45,7 @@
     text-rendering: optimizeLegibility;
   }
 
-  ::selection { background: var(--accent-dim); }
+  ::selection { background: color-mix(in oklab, var(--link) 25%, transparent); }
 
   a { color: inherit; }
 
@@ -53,12 +61,12 @@
     align-items: center;
     gap: 7px;
     padding: 40px 0 0;
-    color: var(--text-mut);
+    color: var(--body);
     font-size: 15px;
     text-decoration: none;
     transition: color 0.12s ease;
   }
-  .back:hover { color: var(--text); }
+  .back:hover { color: var(--ink); }
   .back svg {
     width: 16px;
     height: 16px;
@@ -72,7 +80,7 @@
   /* ---------- Header ---------- */
   .page-header {
     padding: 32px 0 48px;
-    border-bottom: 1px solid var(--border-soft);
+    border-bottom: 1px solid var(--rule);
     margin-bottom: 48px;
   }
 
@@ -81,8 +89,8 @@
     margin-bottom: 18px;
     padding: 6px 14px;
     border-radius: 999px;
-    background: var(--accent-dim);
-    color: var(--accent);
+    background: color-mix(in oklab, var(--link) 12%, #fff);
+    color: var(--link);
     font-size: 13px;
     font-weight: 600;
     letter-spacing: 0.04em;
@@ -95,14 +103,14 @@
     letter-spacing: -0.025em;
     margin: 0 0 10px;
     line-height: 1.1;
-    color: var(--text);
+    color: var(--ink);
     max-width: none;
   }
 
   .page-header .updated {
     margin: 0;
     font-size: 15px;
-    color: var(--text-faint);
+    color: var(--muted);
   }
 
   /* ---------- Content ---------- */
@@ -115,28 +123,28 @@
     font-weight: 650;
     letter-spacing: -0.012em;
     margin: 44px 0 10px;
-    color: var(--text);
+    color: var(--ink);
   }
 
   .content h2:first-child { margin-top: 0; }
 
   .content p {
     margin: 0 0 16px;
-    color: var(--text-mut);
+    color: var(--body);
     font-size: 17px;
     line-height: 1.65;
     text-wrap: pretty;
   }
 
   .content a {
-    color: var(--accent);
+    color: var(--link);
     text-decoration: none;
   }
-  .content a:hover { text-decoration: underline; }
+  .content a:hover { color: var(--link-hover); text-decoration: underline; }
 
   /* ---------- Footer ---------- */
   footer {
-    border-top: 1px solid var(--border-soft);
+    border-top: 1px solid var(--rule);
     padding: 38px 0 56px;
   }
   .foot-inner {
@@ -146,22 +154,22 @@
     justify-content: space-between;
     gap: 18px 28px;
   }
-  .foot-left { color: var(--text-faint); font-size: 14.5px; }
+  .foot-left { color: var(--muted); font-size: 14.5px; }
   .foot-links {
     display: flex;
     gap: 24px;
     font-size: 14.5px;
   }
   .foot-links a {
-    color: var(--text-mut);
+    color: var(--body);
     text-decoration: none;
     transition: color 0.12s ease;
   }
-  .foot-links a:hover { color: var(--text); }
+  .foot-links a:hover { color: var(--ink); }
   .made {
     width: 100%;
     margin-top: 8px;
-    color: var(--text-faint);
+    color: var(--muted);
     font-size: 13.5px;
   }
 
